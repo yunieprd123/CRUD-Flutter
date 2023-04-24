@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'home/homepage.dart';
 
 class LoginGooglePage extends StatelessWidget {
   const LoginGooglePage({Key? key}) : super(key: key);
@@ -34,7 +35,7 @@ class LoginGooglePage extends StatelessWidget {
               right: 10,
               child: Card(
                 color: Colors.black.withOpacity(0.3),
-                elevation: 8.0,
+                elevation: 10.0,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
                 child: Column(
@@ -59,26 +60,28 @@ class LoginGooglePage extends StatelessWidget {
                               fontSize: 12, color: Colors.white)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(
-                          left: 16, right: 16, bottom: 32),
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(14.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                "assets/google.jpg",
-                                width: 30,
-                              ),
-                              SizedBox(width: 30),
-                              Text("Login Here",
-                                  style: GoogleFonts.montserrat(fontSize: 20))
-                            ],
-                          ),
+                      padding:
+                          const EdgeInsets.only(left: 40, right: 40, bottom: 7),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()));
+                        },
+                        child: Text(
+                          'View Here!',
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.bold),
                         ),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 32, 165, 43),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 15, vertical: 25),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10))),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
